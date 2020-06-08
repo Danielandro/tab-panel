@@ -14,7 +14,18 @@ export class TabPanelComponent implements AfterContentInit {
   constructor() { }
 
   ngAfterContentInit(): void {
-    console.log('TABS ', this.tabs);
+    const selectedTab = this.tabs.find(tab => tab.selected);
+
+    if (!selectedTab) {
+      this.tabs.first.selected = true;
+    }
+  }
+
+  selectTab(selectedTab: TabComponent): void {
+    // unselect all tabs
+    this.tabs.forEach(tab => tab.selected = false);
+    // select clicked passed tab
+    selectedTab.selected = true;
   }
 
 }

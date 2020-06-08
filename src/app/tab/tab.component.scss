@@ -1,6 +1,6 @@
 @use '../theme' as *;
 
-:host {
+.tab {
   border-left: $tab-border;
   border-right: $tab-border;
   border-bottom: $tab-border;
